@@ -1,11 +1,13 @@
 "use client";
 
+import { SpinnerIcon } from "@/components/icons/spinner";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-function LoginForm() {
+export function LoginForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function onSubmit(event: React.SyntheticEvent) {
@@ -35,6 +37,23 @@ function LoginForm() {
               disabled={isLoading}
             />
           </div>
+          <div className="grid gap-1">
+            <Label className="sr-only" htmlFor="password">
+              Senha
+            </Label>
+            <Input
+              id="password"
+              type="password"
+              autoCapitalize="none"
+              autoCorrect="off"
+              autoComplete="off"
+              disabled={isLoading}
+            />
+          </div>
+          <Button disabled={isLoading}>
+            {isLoading && <SpinnerIcon className="mr-2 h-4 w-4 animate-spin" />}
+            Entrar
+          </Button>
         </div>
       </form>
     </div>
