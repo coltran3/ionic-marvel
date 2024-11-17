@@ -1,4 +1,4 @@
-import { createSession } from "@/app/lib/session";
+import { createSession } from "@/lib/session";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
