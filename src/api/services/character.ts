@@ -8,6 +8,10 @@ export function getCharacter({
   offset,
 }: GetCharacterParams) {
   return apiClient.get<CharacterResponse>(API_ENDPOINTS.characters, {
-    params: { limit, nameStartsWith, offset },
+    params: {
+      limit,
+      nameStartsWith: nameStartsWith ? nameStartsWith : undefined,
+      offset,
+    },
   });
 }
