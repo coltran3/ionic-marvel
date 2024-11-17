@@ -4,7 +4,7 @@ export interface GetCharacterParams {
   offset: number;
 }
 
-export interface CharacterResponseClass {
+export interface CharacterResponse {
   code?: number;
   status?: string;
   copyright?: string;
