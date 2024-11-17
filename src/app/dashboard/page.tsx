@@ -7,10 +7,7 @@ export default function Dashboard() {
 
   return (
     <div className="flex flex-col w-full p-3 ">
-      <ApplicationCommand
-        value={query}
-        onValueChange={setQuery}
-      ></ApplicationCommand>
+      <ApplicationCommand value={query} onValueChange={setQuery} />
       <div>teste</div>
     </div>
   );
