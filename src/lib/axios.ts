@@ -1,5 +1,4 @@
 import axios from "axios";
-import crypto from "crypto";
 
 export const apiClient = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -8,30 +7,13 @@ export const apiClient = axios.create({
   },
 });
 
-apiClient.interceptors.request.use(
-  (config) => {
-    const ts = new Date().getTime().toString();
-    const hash = crypto
-      .createHash("md5")
-      .update(
-        ts +
-          process.env.NEXT_PUBLIC_MARVEL_PUBLIC_KEY +
-          process.env.NEXT_PUBLIC_MARVEL_PRIVATE_KEY
-      )
-      .digest("hex");
+apiClient.interceptors.request.use((config) => {
+  const configParams = config.params ? config.params : {};
 
-    const configParams = config.params ? config.params : {};
+  config.params = {
+    ...configParams,
+    apikey: process.env.NEXT_PUBLIC_MARVEL_PUBLIC_KEY,
+  };
 
-    config.params = {
-      ...configParams,
-      ts,
-      hash,
-      apikey: process.env.NEXT_PUBLIC_MARVEL_PUBLIC_KEY,
-    };
-
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+  return config;
+});
