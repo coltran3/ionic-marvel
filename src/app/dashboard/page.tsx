@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { ApplicationCommand } from "./components/command";
-import { useCharacters } from "@/hooks/queries/useCharacters";
+import { useCharacters } from "@/hooks/queries/use-characters";
 
 export default function Dashboard() {
   const [query, setQuery] = useState("");

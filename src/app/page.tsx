@@ -1,5 +1,5 @@
 import { MarvelIcon } from "@/components/icons/marvel";
-import { LoginForm } from "./components/LoginForm";
+import { LoginForm } from "./components/login-form";
 
 export default function Home() {
   return (
