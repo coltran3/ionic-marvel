@@ -1,24 +1,21 @@
+import {
+  Url,
+  Response,
+  DataContainer,
+  Image,
+  ComicList,
+  StoryList,
+  SeriesList,
+} from "./common";
+import { EventSummary } from "./event";
+
 export interface GetCharacterByIdParams {
   characterId: string;
 }
 
-export interface CharacterResponse {
-  code?: number;
-  status?: string;
-  copyright?: string;
-  attributionText?: string;
-  attributionHTML?: string;
-  data?: CharacterDataContainer;
-  etag?: string;
-}
+export type CharacterResponse = Response<CharacterDataContainer>;
 
-export interface CharacterDataContainer {
-  offset?: number;
-  limit?: number;
-  total?: number;
-  count?: number;
-  results?: Character[];
-}
+export type CharacterDataContainer = DataContainer<Character>;
 
 export interface Character {
   id?: number;
@@ -34,41 +31,6 @@ export interface Character {
   series?: SeriesList;
 }
 
-export interface Url {
-  type?: string;
-  url?: string;
-}
-
-export interface Image {
-  path?: string;
-  extension?: string;
-}
-
-export interface ComicList {
-  available?: number;
-  returned?: number;
-  collectionURI?: string;
-  items?: ComicSummary[];
-}
-
-export interface ComicSummary {
-  resourceURI?: string;
-  name?: string;
-}
-
-export interface StoryList {
-  available?: number;
-  returned?: number;
-  collectionURI?: string;
-  items?: StorySummary[];
-}
-
-export interface StorySummary {
-  resourceURI?: string;
-  name?: string;
-  type?: string;
-}
-
 export interface EventList {
   available?: number;
   returned?: number;
@@ -76,19 +38,8 @@ export interface EventList {
   items?: EventSummary[];
 }
 
-export interface EventSummary {
+export interface CharacterSummary {
   resourceURI?: string;
   name?: string;
-}
-
-export interface SeriesList {
-  available?: number;
-  returned?: number;
-  collectionURI?: string;
-  items?: SeriesSummary[];
-}
-
-export interface SeriesSummary {
-  resourceURI?: string;
-  name?: string;
+  role?: string;
 }
