@@ -1,7 +1,11 @@
-export interface GetCharacterParams {
+export interface GetCharactersParams {
   nameStartsWith: string;
   limit: number;
   offset: number;
+}
+
+export interface GetCharacterByIdParams {
+  characterId: string;
 }
 
 export interface CharacterResponse {
