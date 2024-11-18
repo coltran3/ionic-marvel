@@ -7,7 +7,7 @@ interface CharacterCardProps {
 
 export function CharacterCard({ title, imgSrc }: CharacterCardProps) {
   return (
-    <Card>
+    <Card className="w-64">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
