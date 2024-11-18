@@ -5,6 +5,7 @@ import { useCharacters } from "@/hooks/queries/use-characters";
 import { CharacterCard } from "./components/character-card";
 import { ApplicationPagination } from "@/components/app-pagination";
 import Link from "next/link";
+import { getImgSrc } from "@/lib/utils";
 
 const PAGE_LIMIT = 15;
 
@@ -45,7 +46,10 @@ export default function Dashboard() {
               <CharacterCard
                 key={character.id}
                 title={character.name}
-                imgSrc={`${character.thumbnail?.path}.${character.thumbnail?.extension}`}
+                imgSrc={getImgSrc({
+                  path: character?.thumbnail?.path ?? "",
+                  extension: character?.thumbnail?.extension ?? "",
+                })}
               />
             </Link>
           ))}
