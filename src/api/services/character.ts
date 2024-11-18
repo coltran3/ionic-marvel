@@ -21,9 +21,12 @@ export function getCharacters({
 }
 
 export function getCharacterById({ characterId }: GetCharacterByIdParams) {
-  return apiClient.get<CharacterResponse>(API_ENDPOINTS.characters, {
-    params: {
-      characterId,
-    },
-  });
+  return apiClient.get<CharacterResponse>(
+    API_ENDPOINTS.characterById(characterId),
+    {
+      params: {
+        characterId,
+      },
+    }
+  );
 }
