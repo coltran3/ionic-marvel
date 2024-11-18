@@ -1,9 +1,3 @@
-export interface GetListParams {
-  nameStartsWith: string;
-  limit: number;
-  offset: number;
-}
-
 export interface GetCharacterByIdParams {
   characterId: string;
 }

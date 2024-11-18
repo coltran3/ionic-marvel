@@ -1,10 +1,7 @@
 import { apiClient } from "@/lib/axios";
 import { API_ENDPOINTS } from "../endpoints";
-import {
-  CharacterResponse,
-  GetCharacterByIdParams,
-  GetListParams,
-} from "../types/character";
+import { CharacterResponse, GetCharacterByIdParams } from "../types/character";
+import { GetListParams } from "../types/common";
 
 export function getCharacters({
   limit,
