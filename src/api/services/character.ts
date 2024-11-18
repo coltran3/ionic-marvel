@@ -3,14 +3,14 @@ import { API_ENDPOINTS } from "../endpoints";
 import {
   CharacterResponse,
   GetCharacterByIdParams,
-  GetCharactersParams,
+  GetListParams,
 } from "../types/character";
 
 export function getCharacters({
   limit,
   nameStartsWith,
   offset,
-}: GetCharactersParams) {
+}: GetListParams) {
   return apiClient.get<CharacterResponse>(API_ENDPOINTS.characters, {
     params: {
       limit,

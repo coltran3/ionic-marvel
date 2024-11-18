@@ -1,10 +1,7 @@
-import {
-  GetCharactersParams,
-  GetCharacterByIdParams,
-} from "@/api/types/character";
+import { GetListParams, GetCharacterByIdParams } from "@/api/types/character";
 
 export const QUERY_KEYS = {
-  characters: (charactersParams: GetCharactersParams) => [
+  characters: (charactersParams: GetListParams) => [
     "characters",
     charactersParams,
   ],
