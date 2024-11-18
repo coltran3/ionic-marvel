@@ -10,4 +10,5 @@ export const QUERY_KEYS = {
     "characters",
     characterId,
   ],
+  events: (characterId: GetListParams) => ["events", characterId],
 } as const;
