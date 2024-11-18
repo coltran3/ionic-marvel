@@ -2,7 +2,7 @@ import { apiClient } from "@/lib/axios";
 import { API_ENDPOINTS } from "../endpoints";
 import { CharacterResponse, GetCharacterParams } from "../types/character";
 
-export function getCharacter({
+export function getCharacters({
   limit,
   nameStartsWith,
   offset,
