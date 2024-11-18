@@ -14,9 +14,9 @@ export default function CharacterPage({
 
   const character = characterResponse?.data?.results?.[0];
   return (
-    <div className="p-3">
+    <div className="p-3 w-full">
       {isLoading ? (
-        <div>Carregando personagem...</div>
+        <div className="text-center">Carregando personagem...</div>
       ) : (
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-2">
