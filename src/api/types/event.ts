@@ -9,7 +9,7 @@ import {
   Url,
 } from "./common";
 
-export type EventResponse = Response<EventDataContainer>;
+export type EventsResponse = Response<EventDataContainer>;
 
 export type EventDataContainer = DataContainer<Event>;
 
